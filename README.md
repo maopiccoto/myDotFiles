@@ -2,22 +2,28 @@
 
 ## -------------- BSPWM + SXHKD ---------------------- 
 
-### Setup Dependencies 
+### 1. Setup Inicial Dependencies 
 ```bash
-$ sudo apt-get install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev 
+sudo apt update
+apt install build-essential git vim xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev
+
+sudo parrot-upgrade
+
+sudo apt update
+
 ```
-### Building and Installing 
+### 2. KanguBuilding and Installing 
 ```bash
-$ sudo apt-get install bspwm -y
-$ git clone https://github.com/baskerville/bspwm.git
-$ git clone https://github.com/baskerville/sxhkd.git 
-$ cd bspwm && make && sudo make install 
-$ cd ../sxhkd && make && sudo make install 
+sudo apt-get install bspwm -y
+git clone https://github.com/baskerville/bspwm.git
+git clone https://github.com/baskerville/sxhkd.git 
+cd bspwm && make && sudo make install 
+cd ../sxhkd && make && sudo make install 
 ```
-### Running bspwm 
+### 3. Running bspwm 
 ```bash
 $ mkdir -p ~/.config/{bspwm,sxhkd} 
-$ cp /usr/local/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/ 
+$ cp /uAv er sr/local/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/ 
 $ cp /usr/local/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/ 
 $ chmod u+x ~/.config/bspwm/bspwmrc 
 ```
