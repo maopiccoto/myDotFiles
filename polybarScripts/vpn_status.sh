@@ -1,3 +1,10 @@
 #!/bin/sh
 
-echo "%{F#2495e7} %{F#e2ee6a}$(/usr/sbin/ifconfig eth0 | grep -w inet | awk '{print $2}')%{u-}"
+IFACE=$(/usr/sbin/ifconfig | grep tun0 | awk '{print $1}' | tr -d ':')
+
+if [ "$IFACE" = "tun0" ]; then
+	echo "%{F#0bb01b} %{F#e2ee6a}$(/usr/sbin/ifconfig tun0 | grep "inet" | awk '{print $2}')%{u-}"
+else
+	echo "%{F#0bb01b}%{u-}%{F-}"
+fi
+
